@@ -1,0 +1,13 @@
+services:
+    srs:
+        stdin_open: true
+        tty: true
+        ports:
+            - 1935:1935
+            - 1985:1985
+            - 1990:1990
+            - 8080:8080
+            - 8088:8088
+            - 8000:8000/udp
+            - 10080:10080/udp
+        image: registry.cn-hangzhou.aliyuncs.com/ossrs/srs:6

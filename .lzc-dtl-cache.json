@@ -1,0 +1,58 @@
+{
+  "name": "SRS",
+  "package": "cloud.lazycat.app.srs",
+  "description": "一个开源的（MIT协议）简单高效的实时视频服务器，支持RTMP、WebRTC、HLS、HTTP-FLV、SRT、MPEG-DASH和GB28181等协议。",
+  "homepage": "https://ossrs.net/lts/zh-cn/",
+  "author": "ossrs",
+  "app_features": [
+    "background_task",
+    "public_path"
+  ],
+  "subdomain": "srs",
+  "version": "6.0.0",
+  "public_paths": [
+    "/"
+  ],
+  "iconPath": "icon.png",
+  "composePath": "docker-compose.yml",
+  "unsupported_platforms": [],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "srs_1935_1935": {
+      "use": true,
+      "type": "port",
+      "protocol": "tcp"
+    },
+    "srs_1985_1985": {
+      "use": false,
+      "type": "http",
+      "path": "/rtc",
+      "targetPath": "/"
+    },
+    "srs_1990_1990": {
+      "use": false,
+      "type": "port",
+      "protocol": "tcp"
+    },
+    "srs_8080_8080": {
+      "use": false,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    },
+    "srs_8000_8000": {
+      "use": false,
+      "type": "port",
+      "protocol": "udp"
+    },
+    "srs_10080_10080": {
+      "use": false,
+      "type": "port",
+      "protocol": "tcp"
+    }
+  },
+  "image_registry.cn-hangzhou.aliyuncs.com_ossrs_srs_6": {
+    "originalImage": "registry.cn-hangzhou.aliyuncs.com/ossrs/srs:6",
+    "pushTarget": "none"
+  }
+}
