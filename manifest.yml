@@ -1,10 +1,3 @@
-lzc-sdk-version: "0.1"
-name: SRS
-package: cloud.lazycat.app.srs
-version: 6.0.0
-description: 一个开源的（MIT协议）简单高效的实时视频服务器，支持RTMP、WebRTC、HLS、HTTP-FLV、SRT、MPEG-DASH和GB28181等协议。
-homepage: https://ossrs.net/lts/zh-cn/
-author: ossrs
 application:
   subdomain: srs
   background_task: true
@@ -14,9 +7,11 @@ application:
   usb_accel: false
   public_path:
     - /
-  routes:
-    - /=http://srs.cloud.lazycat.app.srs.lzcapp:8080/
-    - /api/=http://srs.cloud.lazycat.app.srs.lzcapp:1985/
+  upstreams:
+    - location: /
+      backend: http://srs:8080/
+    - location: /api/
+      backend: http://srs:1985/
   ingress:
     - protocol: tcp
       port: 1935
