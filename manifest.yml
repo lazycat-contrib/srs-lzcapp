@@ -16,30 +16,25 @@ application:
     - protocol: tcp
       port: 1935
       service: srs
-      
     - protocol: tcp
       port: 1985
       service: srs
-
     - protocol: tcp
       port: 1990
       service: srs
-
     - protocol: tcp
       port: 8080
       service: srs
-
     - protocol: tcp
       port: 8088
       service: srs
-
     - protocol: udp
       port: 8000
       service: srs
-
     - protocol: udp
       port: 10080
       service: srs
 services:
   srs:
-    image: registry.cn-hangzhou.aliyuncs.com/ossrs/srs:6
+    # upstream: ossrs/srs:v6.0-r0
+    image: registry.lazycat.cloud/czyt/ossrs/srs:11a274bc62dd62ef
