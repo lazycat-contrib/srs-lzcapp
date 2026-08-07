@@ -19,9 +19,9 @@ images:
     source: ossrs/srs
     channel: custom
     sort: created
-    tag_regex: '^v[0-9]+\.[0-9]+-r[0-9]+$'
-    version_regex: '^v(?P<version>[0-9]+\.[0-9]+)-r(?P<patch>[0-9]+)$'
-    version_template: '{version}.{patch}'
+    tag_regex: '^[0-9]+\.[0-9]+\.[0-9]+$'
+    version_regex: '^(?P<version>[0-9]+\.[0-9]+\.[0-9]+)$'
+    version_template: '{version}'
     delivery:
       mode: lazycat
 stores:
