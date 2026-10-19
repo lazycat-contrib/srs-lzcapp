@@ -36,5 +36,5 @@ application:
       service: srs
 services:
   srs:
-    # upstream: ossrs/srs:7.0.162
-    image: registry.lazycat.cloud/czyt/ossrs/srs:732c9afb024920cd
+    # upstream: ossrs/srs:7.0.189
+    image: registry.lazycat.cloud/czyt/ossrs/srs:2b78ff5eab561c66
